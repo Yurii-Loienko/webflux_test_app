@@ -1,0 +1,25 @@
+server:
+  port: 8083
+
+spring:
+  r2dbc:
+    url: r2dbc:pool:postgres://localhost:5432/webflux_security
+    username: postgres
+    password: postgres
+  flyway:
+    url: jdbc:postgresql://localhost:5432/webflux_security
+    locations: classpath:db/migration
+    user: postgres
+    password: postgres
+
+jwt:
+  password:
+    encoder:
+      secret: 1ActeC+4XI8jzYrGas1XrSI8pjHLz2wnRe01RqS5vmPxS1F4ORFb04+OTrEviyw6DV81kQpcn/ozYIcpfaShcA==
+      iteration: 64
+      keyLength: 256
+  secret: P7M3cK1t2KQ7VWgAbqZZHupwbxU0222edqgdk81KH6KfJlEsK1gml8XIB8RGLT6x73yjGvs2i61XBswVoGfuiQ==
+  expiration: 3600
+  issuer: dreamsicle
+
+
